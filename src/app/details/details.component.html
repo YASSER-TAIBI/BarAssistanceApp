@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img [src]="drinkDetail?.strDrinkThumb" /></div>
+
+                    </div>
+
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{drinkDetail?.strDrink}}</h3>
+                    <p class="product-description">{{drinkDetail?.strInstructions}}</p>
+                    <h4 class="price">Category: <span>{{drinkDetail?.strCategory}}</span></h4>
+                    <h4 class="price">Glass: <span>{{drinkDetail?.strGlass}}</span></h4>
+                    <div class="badges mb-4">
+                        <strong>Ingredents: </strong>
+                        <ng-container *ngFor="let row of drinkDetail?.ingredentsList">
+                            <span class="badge text-bg-warning m-1">{{row}}</span>
+                        </ng-container>
+
+                    </div>
+                    <p class="vote"><strong>{{percent}}%</strong> of people enjoyed this drink! <strong>({{vote}} votes)</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
