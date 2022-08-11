@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
 import { CartService } from '../service/cart.service';
 import { UtilityService } from '../service/utility.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService,
     private router: Router,
     private utlity: UtilityService,
-    private cartService: CartService) { }
+    private cartService: CartService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.api.getDrinks()
@@ -36,6 +38,7 @@ export class HomeComponent implements OnInit {
   }
   addItem(item:any){
     this.cartService.addtoCart(item);
+    this.toastr.success("Your drink has been added to your shopping cart","SUCCESS" );
   }
 
 }
