@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
           this.drinks = res.drinks;
           console.log(res);
           this.drinks.forEach((a: any) => {
-            a.price = this.utlity.randomInteger(100, 1500);
+            a.price = this.utlity.randomInteger(10, 30);
             a.quantity = 1;
           })
         }
